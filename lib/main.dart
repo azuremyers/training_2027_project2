@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.yellow), // Theme
-      ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Reefscape Scouting')),
-        body: const Center(
-          child:
-          Column(
-            children: [
-              Center(
-          child: Row(
-                children: [
-                  Text('Team number: 2910'),
-                  Text('Team name: Jack in the Bot'),
-                ]
-              ),
-              ),
-              Row(
-                  children: [
-                    Text('Match number: 4'),
-                  ]
-              ),
-            ],
+    ProviderScope(
+      child: MaterialApp(
+        theme: ThemeData(
+          colorScheme: .fromSeed(seedColor: Colors.yellow), // Theme
+        ),
+        home: Scaffold(
+          appBar: AppBar(title: const Text('Reefscape Scouting')),
+          body: const Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [Text('Team number: 2910')],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [Text('Match number: 4')],
+                ),
+              ],
+            ),
           ),
         ),
       ),
