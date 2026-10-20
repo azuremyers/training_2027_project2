@@ -8,7 +8,26 @@ void main() {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text('Reefscape Scouting')),
-        body: const Center(child: Text('Hello, World!')),
+        body: const Center(
+          child:
+          Column(
+            children: [
+              Center(
+          child: Row(
+                children: [
+                  Text('Team number: 2910'),
+                  Text('Team name: Jack in the Bot'),
+                ]
+              ),
+              ),
+              Row(
+                  children: [
+                    Text('Match number: 4'),
+                  ]
+              ),
+            ],
+          ),
+        ),
       ),
     ),
   );
