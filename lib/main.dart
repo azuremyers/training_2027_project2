@@ -22,6 +22,7 @@ void main() {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [Text('Match number: 4')],
                 ),
+                ToggleMode(),
               ],
             ),
           ),
@@ -29,4 +30,37 @@ void main() {
       ),
     ),
   );
+}
+
+class Toggle extends Notifier<bool> {
+  @override
+  bool build() => false;
+
+  void mode() {
+    state = !state;
+  }
+}
+
+final toggleProvider = NotifierProvider<Toggle, bool>(Toggle.new);
+
+class ToggleMode extends ConsumerWidget {
+  const ToggleMode({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final toggle = ref.watch(toggleProvider);
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text('Dark Mode: $toggle'),
+        ElevatedButton(
+          onPressed: () {
+            ref.read(toggleProvider.notifier).mode();
+          },
+          child: const Text('Change Mode'),
+        ),
+      ],
+    );
+  }
 }
