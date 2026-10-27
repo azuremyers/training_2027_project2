@@ -16,13 +16,27 @@ void main() {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text('Team number: 2910')],
+                  children: [
+                    Text('Team number: 2910'),
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [Text('Match number: 4')],
                 ),
-                ToggleMode(),
+                Row(
+                  children: [
+                    Column(
+                      Container(
+                        margin: const EdgeInsets.all(20.0),
+
+                      )
+                    ),
+                    Column(
+
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -30,37 +44,4 @@ void main() {
       ),
     ),
   );
-}
-
-class Toggle extends Notifier<bool> {
-  @override
-  bool build() => false;
-
-  void mode() {
-    state = !state;
-  }
-}
-
-final toggleProvider = NotifierProvider<Toggle, bool>(Toggle.new);
-
-class ToggleMode extends ConsumerWidget {
-  const ToggleMode({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final toggle = ref.watch(toggleProvider);
-
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text('Dark Mode: $toggle'),
-        ElevatedButton(
-          onPressed: () {
-            ref.read(toggleProvider.notifier).mode();
-          },
-          child: const Text('Change Mode'),
-        ),
-      ],
-    );
-  }
 }
