@@ -10,31 +10,38 @@ void main() {
         ),
         home: Scaffold(
           appBar: AppBar(title: const Text('Reefscape Scouting')),
-          body: const Center(
+          body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Team number: 2910'),
-                  ],
+                  children: [Text('Team number: 2910')],
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [Text('Match number: 4')],
                 ),
                 Row(
                   children: [
                     Column(
-                      Container(
-                        margin: const EdgeInsets.all(20.0),
-
-                      )
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.all(20.0),
+                          color: Colors.blue,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('+1'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                    Column(
-
-                    ),
+                    const Column(),
                   ],
                 ),
               ],
