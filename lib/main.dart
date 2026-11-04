@@ -6,7 +6,7 @@ void main() {
     ProviderScope(
       child: MaterialApp(
         theme: ThemeData(
-          colorScheme: .fromSeed(seedColor: Colors.yellow), // Theme
+          colorScheme: .fromSeed(seedColor: Colors.pink), // Theme
         ),
         home: Scaffold(
           appBar: AppBar(title: const Text('Reefscape Scouting')),
@@ -23,25 +23,103 @@ void main() {
                   children: [Text('Match number: 4')],
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       children: [
                         Container(
-                          margin: const EdgeInsets.all(20.0),
-                          color: Colors.blue,
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(15.0),
+                          color: Colors.pink,
                           child: Column(
-                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+                              Text('L1'),
                               ElevatedButton(
                                 onPressed: () {},
                                 child: const Text('+1'),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('-1'),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(15.0),
+                          color: Colors.pink,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('L2'),
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('+1'),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('-1'),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(15.0),
+                          color: Colors.pink,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('L3'),
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('+1'),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('-1'),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(15.0),
+                          color: Colors.pink,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('L4'),
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('+1'),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('-1'),
                               ),
                             ],
                           ),
                         ),
                       ],
                     ),
-                    const Column(),
+                    Column(
+                      children:[
+                        Container(
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(15.0),
+                          color: Colors.pink,
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Broke?'),
+                              ]
+                          )
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ],
@@ -52,3 +130,7 @@ void main() {
     ),
   );
 }
+
+class Format(
+
+);
