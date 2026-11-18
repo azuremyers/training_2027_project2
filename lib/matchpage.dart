@@ -1,26 +1,24 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'states.dart';
+import 'package:go_router/go_router.dart';
 
-class MainPage extends ConsumerWidget {
-  const MainPage({super.key});
+import 'levelscorewidgets.dart';
+
+class MatchPage extends ConsumerWidget {
+  const MatchPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('Team number: 2910')],
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('Match number: 4')],
+              children: [
+                Text('Match Number: 1')
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +45,7 @@ class MainPage extends ConsumerWidget {
                         ],
                       ),
                     ),
-                    Container(),
+                    ButtonToMainPage(),
                   ],
                 ),
               ],
@@ -57,5 +55,20 @@ class MainPage extends ConsumerWidget {
       ),
     );
   }
+}
 
+class ButtonToMainPage extends StatelessWidget {
+  const ButtonToMainPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(onPressed: () => context.go('/'), child: Text('Done')),
+        ],
+      ),
+    );
+  }
 }

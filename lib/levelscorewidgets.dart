@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class BrokeSwitch extends State<StatefulWidget> {
   bool light = true;
 
@@ -19,13 +18,12 @@ class BrokeSwitch extends State<StatefulWidget> {
 }
 
 class LevelScoreWidget extends StatefulWidget {
-
+  const LevelScoreWidget({super.key});
 
   @override
   State<StatefulWidget> createState() {
     return LevelScore(0);
   }
-
 }
 
 class LevelScore extends State<StatefulWidget> {
@@ -58,14 +56,8 @@ class LevelScore extends State<StatefulWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('L$levelNumber: $score'),
-          ElevatedButton(
-            onPressed: increment,
-            child: const Text('+1'),
-          ),
-          ElevatedButton(
-            onPressed: decrement,
-            child: const Text('-1'),
-          ),
+          ElevatedButton(onPressed: increment, child: const Text('+1')),
+          ElevatedButton(onPressed: decrement, child: const Text('-1')),
         ],
       ),
     );
