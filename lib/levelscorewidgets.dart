@@ -95,7 +95,9 @@ class ScoreNotifier extends Notifier<Score> {
 
   void decrement(String scoreID) {
     final current = state.scores[scoreID] ?? 0;
-    state = state.copy({scoreID: current - 1});
+    if (current > 0) {
+      state = state.copy({scoreID: current - 1});
+    }
   }
 
   void setBroken(bool broken) {
