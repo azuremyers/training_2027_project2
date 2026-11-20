@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'trackedmatchespage.dart';
 import 'mainpage.dart';
 import 'matchpage.dart';
 
@@ -28,5 +29,9 @@ final _router = GoRouter(
         path: '/match',
         builder: (context, state) => MatchPage(),
       ),
+      GoRoute(
+        path: '/tracked',
+        builder: (context, state) => TrackedMatchesPage(),
+      )
     ]
 );

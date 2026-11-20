@@ -11,46 +11,51 @@ class MatchPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Match Number: 1')
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    LevelScoreWidget(),
-                    LevelScoreWidget(),
-                    LevelScoreWidget(),
-                    LevelScoreWidget(),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.all(5.0),
-                      padding: const EdgeInsets.all(15.0),
-                      color: Colors.pink,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Broke?'),
-                          BrokeSwitch().build(context),
-                        ],
+        child: Container(
+          margin: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.all(15.0),
+          color: Colors.blue[100],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Match Number: ')
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      LevelScoreWidget(1),
+                      LevelScoreWidget(2),
+                      LevelScoreWidget(3),
+                      LevelScoreWidget(4),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.all(5.0),
+                        padding: const EdgeInsets.all(15.0),
+                        color: Colors.blue,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Broke?'),
+                            BrokeSwitch().build(context),
+                          ],
+                        ),
                       ),
-                    ),
-                    ButtonToMainPage(),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                      ButtonToMainPage(),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

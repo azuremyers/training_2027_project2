@@ -7,7 +7,7 @@ class BrokeSwitch extends State<StatefulWidget> {
   Widget build(BuildContext context) {
     return Switch(
       value: light,
-      activeThumbColor: Colors.pink[100],
+      activeThumbColor: Colors.blue[900],
       onChanged: (bool value) {
         setState(() {
           light = value;
@@ -18,21 +18,18 @@ class BrokeSwitch extends State<StatefulWidget> {
 }
 
 class LevelScoreWidget extends StatefulWidget {
-  const LevelScoreWidget({super.key});
+  final int levelNumber;
+
+  const LevelScoreWidget(this.levelNumber, {super.key});
 
   @override
-  State<StatefulWidget> createState() {
-    return LevelScore(0);
+  State<LevelScoreWidget> createState() {
+    return _LevelScoreWidgetState();
   }
 }
 
-class LevelScore extends State<StatefulWidget> {
+class _LevelScoreWidgetState extends State<LevelScoreWidget> {
   int score = 0;
-  int levelNumber = 0;
-
-  LevelScore(int level) {
-    levelNumber = level;
-  }
 
   void increment() {
     setState(() {
@@ -51,11 +48,11 @@ class LevelScore extends State<StatefulWidget> {
     return Container(
       margin: const EdgeInsets.all(5.0),
       padding: const EdgeInsets.all(15.0),
-      color: Colors.pink,
+      color: Colors.blue,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('L$levelNumber: $score'),
+          Text('L${widget.levelNumber}: $score'),
           ElevatedButton(onPressed: increment, child: const Text('+1')),
           ElevatedButton(onPressed: decrement, child: const Text('-1')),
         ],
