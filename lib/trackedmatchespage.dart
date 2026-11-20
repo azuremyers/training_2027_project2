@@ -42,4 +42,3 @@ class ButtonToTrackedPage extends StatelessWidget {
     );
   }
 }
-

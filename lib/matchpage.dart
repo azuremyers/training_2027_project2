@@ -60,7 +60,7 @@ class MatchPage extends ConsumerWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text('Broke?'),
-                            BrokeSwitch().build(context),
+                            BrokeSwitch(),
                           ],
                         ),
                       ),
