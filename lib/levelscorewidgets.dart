@@ -18,7 +18,7 @@ class BrokeSwitch extends State<StatefulWidget> {
 }
 
 class LevelScoreWidget extends StatefulWidget {
-  final int levelNumber;
+  final String levelNumber;
 
   const LevelScoreWidget(this.levelNumber, {super.key});
 
@@ -47,12 +47,12 @@ class _LevelScoreWidgetState extends State<LevelScoreWidget> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(5.0),
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(13.0),
       color: Colors.blue,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('L${widget.levelNumber}: $score'),
+          Text('${widget.levelNumber}: $score'),
           ElevatedButton(onPressed: increment, child: const Text('+1')),
           ElevatedButton(onPressed: decrement, child: const Text('-1')),
         ],

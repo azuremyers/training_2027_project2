@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
             ],
           ),
         ),
-      )
+      ),
     );
   }
 }
@@ -36,7 +36,10 @@ class ButtonToMatchPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(onPressed: () => context.go('/match'), child: Text('Track Match')),
+          ElevatedButton(
+            onPressed: () => context.go('/match'),
+            child: Text('Track Match'),
+          ),
         ],
       ),
     );

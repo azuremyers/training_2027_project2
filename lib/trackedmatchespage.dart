@@ -16,17 +16,13 @@ class TrackedMatchesPage extends StatelessWidget {
           color: Colors.purple[100],
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ButtonToMainPage()
-            ],
+            children: [ButtonToMainPage()],
           ),
         ),
       ),
     );
   }
 }
-
-
 
 class ButtonToTrackedPage extends StatelessWidget {
   const ButtonToTrackedPage({super.key});
@@ -46,3 +42,4 @@ class ButtonToTrackedPage extends StatelessWidget {
     );
   }
 }
+

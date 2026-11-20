@@ -21,7 +21,12 @@ class MatchPage extends ConsumerWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Match Number: ')
+                  Column(
+                    children: [
+                      Text('Enter team number'),
+                      Text('Enter match number'),
+                    ],
+                  ),
                 ],
               ),
               Row(
@@ -29,17 +34,27 @@ class MatchPage extends ConsumerWidget {
                 children: [
                   Column(
                     children: [
-                      LevelScoreWidget(1),
-                      LevelScoreWidget(2),
-                      LevelScoreWidget(3),
-                      LevelScoreWidget(4),
+                      LevelScoreWidget('L1'),
+                      LevelScoreWidget('L2'),
+                      LevelScoreWidget('L3'),
+                      LevelScoreWidget('L4'),
                     ],
                   ),
                   Column(
                     children: [
+                      LevelScoreWidget('Miss L1'),
+                      LevelScoreWidget('Miss L2'),
+                      LevelScoreWidget('Miss L3'),
+                      LevelScoreWidget('Miss L4'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      LevelScoreWidget('Algae in net'),
+                      LevelScoreWidget('Penalties'),
                       Container(
                         margin: const EdgeInsets.all(5.0),
-                        padding: const EdgeInsets.all(15.0),
+                        padding: const EdgeInsets.all(29.0),
                         color: Colors.blue,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -73,6 +88,28 @@ class ButtonToMainPage extends StatelessWidget {
         children: [
           ElevatedButton(onPressed: () => context.go('/'), child: Text('Done')),
         ],
+      ),
+    );
+  }
+}
+
+class MatchTextField extends StatelessWidget {
+  final String hint;
+
+  const MatchTextField(this.hint, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: TextField(
+        decoration: InputDecoration(
+          hintText: '$hint: ',
+          border: const OutlineInputBorder(),
+        ),
+        keyboardType: TextInputType.number,
+        onChanged: (value) {
+          Text('Entered: $value');
+        },
       ),
     );
   }
